@@ -1,0 +1,543 @@
+.cs-home {
+
+	&-intro {
+		@include bg('home-bg.jpg', center, center);
+		// background-image: url('../assets/images/home-bg.jpg');
+		// background-position: center;
+		background-size: cover;
+		background-attachment: fixed;
+		padding: 250px 15px 300px 15px;
+		position: relative;
+
+		&.video-bg {
+
+			video {
+				@include pos(absolute, auto, auto);
+				min-height: 100%;
+				min-width: 100%;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+
+		}
+
+		&.particles-bg {
+			// background: black;
+			background: linear-gradient(to bottom right, #000, darken($primary-color, 20%));
+
+			#particles-js {
+				@include pos(absolute, auto, auto);
+				min-height: 100%;
+				min-width: 100%;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+
+		}
+
+		&:after {
+			@include pos();
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			z-index: 2;
+			display: block;
+			background-color: rgba(0, 0, 0, 0.5) !important;
+			content: '';
+		}
+
+		.row {
+			position: relative;
+			z-index: 10;
+		}
+
+		h1 {
+			@include font-text();
+			color: white;
+		}
+
+		h4 {
+			@include font-text();
+			color: white;
+			font-weight: 400;
+		}
+
+		.cs-btn {
+			margin-top: 30px;
+		}
+	}
+
+	&-about {
+		padding: 0px 15px 50px 15px;
+		background-color: $primary-color;
+		text-align: center;
+
+		&-row-info {
+			@include flex();
+			padding-top: 20px;
+			text-align: left;
+		}
+
+		img {
+			display: inline-block;
+			margin: auto;
+		}
+	}
+
+	&-why {
+		padding-top: 20px;
+		padding-bottom: 50px;
+		z-index: 5;
+		position: relative;
+
+		&-row-cards {
+			padding-top: 50px;
+		}
+
+		&-card {
+			background-color: $second-color;
+			border-radius: 15px;
+			text-align: center;
+			padding: 50px 15px 30px 15px;
+			transition: all 0.3s ease;
+
+			img {
+				display: inline-block;
+				margin: auto;
+				fill: blue;
+			}
+
+			h4 {
+				padding-top: 20px;
+			}
+
+			p {
+				max-width: 260px;
+				display: inline-block;
+				margin: auto;
+			}
+		}
+
+	}
+
+	&-roadmap {
+		padding-top: 60px;
+		padding-bottom: 60px;
+		overflow: hidden;
+		z-index: 4;
+		position: relative;
+
+		// roadmap
+
+		.timeline ul {
+		  padding: 50px 0;
+		}
+
+		.timeline ul li {
+		  list-style-type: none;
+		  position: relative;
+		  width: 6px;
+		  margin: 0 auto;
+		  padding-top: 50px;
+		  background: $second-color;
+		  color: $second-color;
+		}
+
+		.timeline ul li::after {
+		  content: '';
+		  position: absolute;
+		  left: 50%;
+		  bottom: 0;
+		  transform: translateX(-50%);
+		  width: 30px;
+		  height: 30px;
+		  border-radius: 50%;
+		  z-index: 3;
+		  background: $second-color;
+		}
+
+		.timeline ul li::before {
+		  content: '';
+		  position: absolute;
+		  left: 50%;
+		  bottom: -5px;
+		  transform: translateX(-50%);
+		  width: 40px;
+		  height: 40px;
+		  border-radius: 50%;
+		  z-index: 2;
+		  animation: ZoomBall 2s infinite;
+		  background: $second-color;
+		}
+
+		.timeline ul li div {
+			@include font(14px, 1.6);
+		  position: relative;
+		  bottom: -5px;
+		  width: 400px;
+		  padding: 15px;
+		  background: $primary-color;
+		  border-radius: 10px;
+		}
+
+		.timeline ul li div::before {
+		  content: '';
+		  position: absolute;
+		  bottom: 12px;
+		  width: 0;
+		  height: 0;
+		  border-style: solid;
+		}
+
+		.timeline ul li:nth-child(odd) div {
+		  left: 45px;
+		}
+
+		.timeline ul li:nth-child(odd) div::before {
+		  left: -15px;
+		  border-width: 8px 16px 8px 0;
+		  border-color: transparent $primary-color transparent transparent;
+		}
+
+		.timeline ul li:nth-child(even) div {
+		  left: -439px;
+		}
+
+		.timeline ul li:nth-child(even) div::before {
+		  right: -15px;
+		  border-width: 8px 0 8px 16px;
+		  border-color: transparent transparent transparent $primary-color;
+		}
+
+		span.time {
+		  display: block;
+		  font-size: 1.2rem;
+		  font-weight: bold;
+		  margin-bottom: 8px;
+		}
+
+		// effects
+
+		.timeline ul li::after {
+		  transition: background .5s ease-in-out;
+		}
+
+		.timeline ul li.in-view::after {
+		  background: $primary-color;
+		}
+		.timeline ul li.in-view::before {
+		  background: $light-primary-color;
+		}
+
+		.timeline ul li div {
+		  visibility: hidden;
+		  opacity: 0;
+		  transition: all .5s ease-in-out;
+		}
+
+		.timeline ul li:nth-child(odd) div {
+		  transform: translate3d(200px, 0, 0);
+		}
+
+		.timeline ul li:nth-child(even) div {
+		  transform: translate3d(-200px, 0, 0);
+		}
+
+		.timeline ul li.in-view div {
+		  transform: none;
+		  visibility: visible;
+		  opacity: 1;
+		}
+
+	}
+
+	&-rating {
+		background-color: $primary-color;
+		padding: 20px 15px 40px 15px;
+		overflow: hidden;
+
+		.row:last-child {
+			padding-top: 40px;
+		}
+
+		&-single {
+			text-align: center;
+			background-color: $second-color;
+			border-radius: 10px;
+
+			&-rate {
+				@include font(30px, 1.6);
+				color: $primary-color;
+				font-weight: 700;
+				background-color: $second-color;
+				border-top-right-radius: 10px;
+				border-top-left-radius: 10px;
+				padding: 10px 0;
+
+				span {
+					@include font(20px, 1.6);
+					font-weight: 400;
+					color: $text-color;
+				}
+			}
+
+			h6 {
+				padding: 10px 0;
+				font-weight: 400;
+				color: $second-color;
+				background-color: $dark-primary-color;
+				border-bottom-right-radius: 10px;
+				border-bottom-left-radius: 10px;
+			}
+		}
+
+	}
+
+	&-team {
+		padding-top: 50px;
+		padding-bottom: 50px;
+
+		.row:last-child {
+			padding-top: 40px;
+		}
+
+		&-single {
+			text-align: center;
+			background-color: $second-color;
+			border-radius: 10px;
+			padding: 30px 10px 20px 10px;
+			transition: all 0.3s ease;
+
+			img {
+				border-radius: 50%;
+				display: inline-block;
+				margin: auto;
+			}
+
+			h4 {
+				padding-top: 20px;
+				padding-bottom: 4px;
+				transition: all 0.3s ease;
+			}
+
+			h6 {
+				@include font-text();
+				font-weight: 400;
+				transition: all 0.3s ease;
+			}
+
+			p {
+				@include font(12px, 1.6);
+				display: inline-block;
+				margin: auto;
+				max-width: 200px;
+				transition: all 0.3s ease;
+				padding-bottom: 15px;
+			}
+
+			&:hover {
+				background-color: $primary-color;
+
+				h4, h6, p, .cs-home-team-single-social i {
+					color: $second-color;
+				}
+			}
+
+			&-social {
+
+				a {
+					display: inline-block;
+					margin-left: 5px;
+					margin-right: 5px;
+				}
+
+				i {
+					@include font(14px, 1);
+					color: $primary-color;
+					transition: all 0.3s ease;
+
+					&:hover, &:focus, &:active {
+						color: $dark-second-color !important;
+					}
+				}
+
+			}
+		}
+
+	}
+
+	&-token {
+		padding-top: 50px;
+		padding-bottom: 50px;
+
+		.row:last-child {
+			padding-top: 70px;
+		}
+
+		li {
+			@include font(16px, 2);
+		}
+	}
+
+	&-blog {
+		padding-top: 50px;
+		padding-bottom: 50px;
+
+		&-row-posts {
+			padding-top: 70px;
+		}
+
+		&-single {
+			background-color: $second-color;
+			border-radius: 15px;
+
+			&:hover, &:focus, &:active {
+				img {
+					top: -25px;
+					right: -20px;
+					-webkit-box-shadow: -10px 10px 59px -16px rgba(0,0,0,0.75);
+					-moz-box-shadow: -10px 10px 59px -16px rgba(0,0,0,0.75);
+					box-shadow: -10px 10px 59px -16px rgba(0,0,0,0.75);
+				}
+			}
+
+			&-info {
+				border-top-left-radius: 15px;
+				border-top-right-radius: 15px;
+				padding: 20px 200px 20px 20px;
+				position: relative;
+				min-height: 210px;
+
+				img {
+					@include pos(absolute, 165px, auto);
+					top: -15px;
+					right: -15px;
+					transition: all 0.3s ease;
+					border-radius: 8px;
+				}
+
+			}
+
+			&-more {
+				@include flex();
+				background-color: $primary-color;
+				border-bottom-left-radius: 15px;
+				border-bottom-right-radius: 15px;
+				padding: 10px 20px;
+
+				span {
+					color: $second-color;
+				}
+			}
+
+			&-left {
+
+				.cs-home-blog-single-info {
+					padding: 20px 20px 20px 170px;
+
+					img {
+						right: auto;
+						left: -15px;
+					}
+				}
+
+			}
+		}
+	}
+
+	&-chance {
+		@include bg('home-chance-bg.jpg', center, center);
+		// background-image: url('assets/images/home-chance-bg.jpg');
+		// background-position: center;
+		background-size: cover;
+		background-attachment: fixed;
+		padding-top: 100px;
+		padding-bottom: 100px;
+		margin-top: 150px;
+		position: relative;
+		overflow: hidden;
+
+		&:before {
+			@include pos();
+			background-color: rgba(0, 0, 0, 0.3);
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			display: block;
+			content: '';
+		}
+
+		h6 {
+			@include font-text();
+			color: $second-color;
+			font-weight: 300;
+		}
+
+		p {
+			color: $second-color;
+		}
+	}
+
+	&-email {
+		background-color: $primary-color;
+		padding-top: 50px;
+		padding-bottom: 70px;
+		position: relative;
+		z-index: 4;
+
+		form {
+
+			input {
+				@include font(15px, 1.8);
+				border-radius: 30px;
+				border-width: 0;
+				outline: none;
+				padding: 10px 25px;
+				width: 68%;
+				position: relative;
+				transition: all 0.3s ease;
+				top: 0;
+				right: 0;
+
+				&:focus {
+					top: -4px;
+					right: -3px;
+					-webkit-box-shadow: -10px 10px 59px -16px rgba(0,0,0,0.75);
+					-moz-box-shadow: -10px 10px 59px -16px rgba(0,0,0,0.75);
+					box-shadow: -10px 10px 59px -16px rgba(0,0,0,0.75);
+				}
+			}
+
+			button {
+				width: 30%;
+				margin-left: 1%;
+			}
+
+		}
+	}
+
+}
+
+@keyframes ZoomBall {
+	0% {
+		width: 30px;
+		height: 30px;
+		bottom: 0;
+	}
+	50% {
+		width: 40px;
+		height: 40px;
+		bottom: -5px;
+	}
+	100% {
+		width: 30px;
+		height: 30px;
+		bottom: 0;
+	}
+}

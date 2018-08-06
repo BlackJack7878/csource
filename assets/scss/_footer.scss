@@ -1,0 +1,43 @@
+footer {
+	background-color: $primary-color;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	li {
+
+		a {
+			color: $second-color;
+			transition: all 0.3s ease;
+
+			&:hover, &:active, &:focus {
+				color: $dark-second-color;
+			}
+		}
+	}
+
+	.footer-social-col {
+		
+		ul {
+			@include flex($just: space-around);
+		}
+
+		li a i {
+			@include font(40px, 1);
+		}
+	}
+
+	.footer-menu-col {
+		text-align: center;
+		padding-top: 40px;
+
+		li {
+			display: inline-block;
+			padding: 10px 15px;
+
+			a {
+				@include font(14px, 1.2);
+			}
+		}
+
+	}
+}

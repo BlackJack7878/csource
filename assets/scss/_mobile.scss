@@ -1,0 +1,664 @@
+@media screen and (min-width: 1650px) {
+  .cs-home-intro:before {
+    transform: rotate(4deg) skewX(0deg);
+  }
+  .cs-tringle-block {
+
+    &.cs-tringle-bottom-right:before {
+      transform: rotate(4deg) skewX(0deg);
+    }
+
+    &.cs-tringle-bottom-left:before {
+      transform: rotate(-4deg) skewX(0deg);
+    }
+
+    &.cs-tringle-top-right:before {
+      transform: rotate(-4deg) skewX(0deg);
+    }
+
+    &.cs-tringle-top-left:before {
+      transform: rotate(4deg) skewX(0deg);
+    }
+
+  }
+}
+
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
+@media screen and (max-width: 991px) {
+
+  .anim-left,
+  .anim-left-slow,
+  .anim-right,
+  .anim-right-slow,
+  .anim-rotate,
+  .anim-spin,
+  .anim-spin-right,
+  .anim-drop,
+  .anim-apear,
+  .anim-under,
+  .anim-under-slow,
+  .anim-under-slowest {
+    opacity: 1;
+  }
+
+  header {
+    @include pos(fixed, 100%, auto);
+    @include clearfix();
+    background-color: $primary-color;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    -webkit-box-shadow: 0px 0px 34px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 34px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 34px 0px rgba(0,0,0,0.75);
+
+    .row {
+      display: block;
+    }
+
+    .cs-logo {
+      display: none;
+
+      &-mobile {
+        display: inline-block;
+
+        img {
+          max-width: 240px;
+        }
+      }
+    }
+
+    nav {
+      display: none;
+    }
+  }
+
+  .cs-mob-trigger {
+    display: inline-block;
+  }
+
+  .cs-tringle-block {
+    &.cs-tringle-bottom-left:before {
+      bottom: 70px;
+    }
+
+    &.cs-tringle-top-left:before {
+      bottom: -70px;
+    }
+  }
+
+  .cs-home {
+
+    &-intro {
+
+      &.video-bg video {
+        display: none;
+      }
+
+      :before {
+        bottom: -70px;
+      }
+    }
+
+    &-about {
+
+      &-row-info {
+        flex-direction: column-reverse;
+      }
+
+      img {
+        max-width: 250px;
+        margin-bottom: 30px;
+      }
+
+    }
+
+    &-why {
+
+      &-card {
+        margin-bottom: 40px;
+
+        p {
+          max-width: 340px;
+        }
+      }
+
+    }
+
+    &-team {
+
+      &-single {
+        margin-bottom: 40px;
+
+        p {
+          max-width: 340px;
+        }
+
+      }
+
+    }
+
+    &-token {
+
+      .row:last-child {
+        padding-top: 0;
+      }
+
+      #tokenChart {
+        margin-bottom: 50px;
+      }
+
+    }
+
+    &-blog {
+
+      &-single {
+        margin-bottom: 50px;
+      }
+
+    }
+
+    &-chance {
+      margin-top: 40px;
+    }
+
+  }
+
+  .cs-about {
+
+    &-airdrop {
+
+      .row:last-child {
+        @include flex-col();
+        padding-top: 20px;
+      }
+
+      img {
+        margin-bottom: 30px;
+      }
+
+    }
+
+    &-functions {
+      padding-top: 50px;
+    }
+
+  }
+
+  .cs-sample {
+
+    &-sidebar {
+      padding-top: 30px;
+
+      &-left {
+        @include flex();
+        flex-direction: column-reverse;
+      }
+
+    }
+
+  }
+}
+
+@media screen and (max-width: 900px) {
+
+  .cs-home {
+
+    &-roadmap {
+      .timeline ul li div {
+        width: 250px;
+      }
+      .timeline ul li:nth-child(even) div {
+        left: -289px;
+      }
+    }
+
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .cs-home {
+
+    &-counter {
+      .flip {
+        width: 16px;
+        height: 30px;
+        line-height: 28px;
+        font-size: 24px;
+      }
+
+      .inn {
+        font-size: 24px !important;
+      }
+
+      .flip-clock-wrapper {
+        margin-left: 0;
+        margin-right: 0;
+        height: 70px;
+      }
+
+      .flip-clock-wrapper ul li a div.up:after {
+        top: 15px;
+      }
+
+      .flip-clock-divider {
+        width: 5px;
+        position: relative;
+        top: -10px;
+      }
+
+      .flip-clock-divider {
+
+        .flip-clock-dot {
+          display: none;
+        }
+
+        &.seconds {
+          .flip-clock-label {
+            right: -53px;
+          }
+        }
+
+        &.minutes {
+          .flip-clock-label {
+            right: -52px;
+          }
+        }
+
+        &.hours {
+          .flip-clock-label {
+            right: -44px;
+          }
+        }
+
+        &.days {
+          .flip-clock-label {
+            right: -41px;
+          }
+        }
+
+      }
+    }
+
+    &-rating {
+
+      &-single {
+        margin-bottom: 30px;
+      }
+
+    }
+
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .cs-home {
+
+    &-roadmap {
+      .timeline ul li {
+        margin-left: 20px;
+      }
+      .timeline ul li div {
+        // width: calc(100vw - 91px);
+      }
+      .timeline ul li:nth-child(even) div {
+        left: 45px;
+      }
+      .timeline ul li:nth-child(even) div::before {
+        left: -15px;
+        border-width: 8px 16px 8px 0;
+        border-color: transparent #F45B69 transparent transparent;
+      }
+    }
+
+    &-email {
+
+      form {
+
+        input {
+          width: 100%;
+          margin-bottom: 30px;
+        }
+
+        button {
+          width: 100%;
+          margin-left: 0;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+
+  header {
+    padding-bottom: 7px;
+
+    .col-md-3 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+  }
+
+  input {
+    @include font(11px, 1.8);
+    height: 39px !important;
+    margin-bottom: 10px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    padding-bottom: 15px;
+  }
+
+  h3, h4, h5, h6 {
+    padding-bottom: 10px;
+  }
+
+  h1 {
+    @include font(30px, 1.4);
+  }
+
+  h2 {
+    @include font(24px, 1.4);
+  }
+
+  h3 {
+    @include font(20px, 1.4);
+  }
+
+  h4 {
+    @include font(16px, 1.4);
+  }
+
+  h5 {
+    @include font(13px, 1.4);
+  }
+
+  h6 {
+    @include font(10px, 1.4);
+  }
+
+  p {
+    @include font(12px, 1.6);
+    padding-bottom: 15px;
+  }
+
+  .cs-underlined:after,
+  .cs-underlined-primary:after {
+    bottom: 10px;
+  }
+
+  .cs-btn {
+    @include font(11px, 1.8);
+    padding: 8px 25px;
+  }
+
+  .cs-tringle-block {
+    height: 50px;
+
+    &.cs-tringle-bottom-right:before {
+      transform: rotate(4deg) skewX(0deg);
+      bottom: 40px;
+    }
+
+    &.cs-tringle-bottom-left:before {
+      transform: rotate(-4deg) skewX(0deg);
+      bottom: 5px;
+    }
+
+    &.cs-tringle-top-right:before {
+      transform: rotate(-4deg) skewX(0deg);
+    }
+
+    &.cs-tringle-top-left:before {
+      transform: rotate(4deg) skewX(0deg);
+      bottom: -160px;
+    }
+
+  }
+
+  .cs-block-subheader {
+    @include font(13px, 1.8);
+  }
+
+  .cs-home {
+
+    &-intro {
+      padding-top: 150px;
+      padding-bottom: 120px;
+
+      &:before {
+        bottom: -5px;
+        padding-bottom: 50px;
+        transform: rotate(4deg) skewX(0deg);
+      }
+
+    }
+
+    &-about {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    &-why {
+      padding-bottom: 30px;
+      padding-top: 30px;
+
+      &-row-cards {
+        padding-top: 20px;
+      }
+
+    }
+
+    &-roadmap {
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      .timeline ul li div {
+        @include font(12px, 1.6);
+      }
+
+    }
+
+    &-rating {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    &-team {
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      &-single {
+        padding-left: 20px;
+        padding-right: 20px;
+
+        p {
+          max-width: 300px;
+        }
+
+      }
+    }
+
+    &-token {
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      li, b {
+        @include font(14px, 2);
+      }
+
+    }
+
+    &-email {
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      form {
+
+        input {
+          @include font(11px, 1.8);
+          margin-bottom: 10px;
+        }
+
+      }
+
+    }
+
+    &-blog {
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      &-row-posts {
+        padding-top: 20px;
+      }
+
+      &-single {
+        text-align: center;
+
+        &:hover, &:focus, &:active {
+          img {
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+          }
+        }
+
+        &-info {
+          @include clearfix();
+          padding: 20px;
+          min-height: auto;
+
+          h5 {
+            padding-bottom: 15px;
+          }
+
+          p {
+            margin-top: 15px;
+            text-align: left;
+            padding-bottom: 5px;
+          }
+
+          img {
+            position: static;
+            display: inline-block;
+            margin: auto;
+          }
+
+        }
+
+        &-more {
+
+          span {
+            @include font(14px, 1.6);
+          }
+
+          .cs-btn {
+            padding: 4px 15px;
+          }
+
+        }
+
+      }
+
+    }
+
+    &-chance {
+      margin-top: 0;
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+
+  }
+
+  footer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    .footer-menu-col {
+      padding-top: 15px;
+
+      li a {
+        @include font(10px, 1.2);
+      }
+
+    }
+
+    .footer-social-col li a i {
+      @include font(25px, 1);
+    }
+
+  }
+
+  .cs-about {
+
+    &-airdrop {
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      img {
+        margin-bottom: 30px;
+        max-width: 200px;
+      }
+
+    }
+
+    &-functions {
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      .row:last-child {
+        padding-top: 20px;
+      }
+
+      li b {
+        @include font(15px, 1.8);
+      }
+
+    }
+
+    &-faq {
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      .row:last-child {
+        padding-top: 20px;
+      }
+    }
+
+  }
+
+  .cs-airdrop {
+
+    &-apply {
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      form {
+        padding-top: 20px;
+
+        button {
+          margin-top: 10px;
+        }
+        
+      }
+
+    }
+
+  }
+
+}

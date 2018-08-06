@@ -1,0 +1,40 @@
+.cs-airdrop {
+
+	&-apply {
+		padding-top: 50px;
+		padding-bottom: 50px;
+
+		form {
+			text-align: center;
+			padding-top: 50px;
+
+			input {
+				@include font(15px, 1.8);
+				border-radius: 30px;
+				border-width: 0;
+				outline: none;
+				padding: 10px 25px;
+				width: 100%;
+				position: relative;
+				transition: all 0.3s ease;
+				top: 0;
+				right: 0;
+				margin-bottom: 20px;
+
+				&:focus {
+					top: -4px;
+					right: -3px;
+					-webkit-box-shadow: -10px 10px 59px -16px rgba(0,0,0,0.75);
+					-moz-box-shadow: -10px 10px 59px -16px rgba(0,0,0,0.75);
+					box-shadow: -10px 10px 59px -16px rgba(0,0,0,0.75);
+				}
+			}
+
+		}
+
+		button {
+			margin-top: 30px;
+		}
+	}
+
+}

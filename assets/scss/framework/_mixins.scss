@@ -1,0 +1,143 @@
+@mixin clearfix() {
+	&:after {
+		display: block;
+		content: '';
+		visibility: hidden;
+		clear: both;
+	}
+}
+
+//*
+//* Font Family
+//*
+
+@mixin font-header(){
+	font-family: 'Montserrat', sans-serif;
+}
+
+@mixin font-text(){
+	font-family: 'Comfortaa', cursive;
+};
+
+@mixin font-menu(){
+	font-family: 'Poppins', sans-serif;
+};
+
+//*
+//* Font Mixins
+//*
+
+@mixin font($size: 1.8rem, $lheight: 3rem) {
+	font-size: $size;
+	line-height: $lheight;
+}
+
+@mixin hiddentext() {
+	text-indent:-99999px;
+	white-space:nowrap;
+	overflow:hidden;
+}
+
+@mixin ellip() {
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+
+
+//*
+//* Dimensions Mixins
+//*
+
+@mixin block($w: 100%, $h: 100%) {
+	display: block;
+	width: $w;
+	height: $h;
+}
+
+@mixin dims($w: 100%, $h: 100%) {
+	width: $w;
+	height: $h;
+}
+
+@mixin pos($pos: absolute, $w: 100%, $h: 100%) {
+	position: $pos;
+	width: $w;
+	height: $h;
+}
+
+@mixin flex($just: space-between, $align: center) {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: $just;
+        -ms-flex-pack: $just;
+            justify-content: $just;
+    -webkit-box-align: $align;
+        -ms-flex-align: $align;
+            align-items: $align;
+}
+
+@mixin flex-col(){
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+//*
+//* Animations Mixins
+//*
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  animation: #{$str};
+}
+
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+
+
+//*
+//* Backgrounds Mixins
+//*
+
+@mixin bg($img, $x: 0, $y: 0, $rep: no-repeat, $color: transparent, $pos: scroll) {
+	background: url('assets/images/#{$img}') $pos $rep $x $y $color;
+}
+
+
+//*
+//* Blocks
+//*
+
+@mixin scale($val) {
+	transform: scale($val);
+}
+
+@mixin transform($prop) {
+	-webkit-transform: $prop;
+	-moz-transform: $prop;
+	-o-transform: $prop;
+	-ms-transform: $prop;
+	transform: $prop;
+}
+
+@mixin round($radius: $round, $positions: all) {
+	@if $positions == all {
+		border-radius: $radius;
+	} @else {
+		@each $position in $positions {
+			border-#{$position}-radius: $radius;
+		}
+	}
+}

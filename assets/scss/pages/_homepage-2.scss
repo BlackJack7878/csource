@@ -1,0 +1,100 @@
+.cs-home-counter {
+
+	.flip-clock-label {
+		color: $primary-color;
+	}
+
+	#clock {
+		display: inline-block;
+		width: auto;
+	}
+
+	.flip {
+		width: 40px;
+		height: 70px;
+		line-height: 68px;
+		font-size: 50px;
+	}
+
+	.inn {
+		font-size: 56px !important;
+	}
+
+	.flip-clock-wrapper ul li a div.up:after {
+		top: 35px;
+	}
+
+	.flip-clock-divider {
+		position: relative;
+		top: -10px;
+	}
+
+	.flip-clock-divider {
+
+		&.seconds {
+			.flip-clock-label {
+				right: -76px;
+			}
+		}
+
+		&.minutes {
+			.flip-clock-label {
+				right: -76px;
+			}
+		}
+
+		&.hours {
+			.flip-clock-label {
+				right: -70px;
+			}
+		}
+
+		&.days {
+			.flip-clock-label {
+				right: -65px;
+			}
+		}
+
+	}
+
+	.cs-home-intro {
+
+		h4 {
+			padding-bottom: 0;
+			padding-top: 30px;
+		}
+
+		.cs-btn {
+			margin-top: 10px;
+		}
+
+		#cs-progress {
+			max-width: 400px;
+			display: inline-block;
+			margin: auto;
+		    width: 100%;
+		    background-color: rgba(0, 0, 0, .8);
+		    border-radius: 15px;
+		    padding: 5px 5px;
+		    overflow: hidden;
+		}
+
+		#cs-bar {
+		    width: 10%;
+		    height: 20px;
+		    border-radius: 15px;
+		    background-color: $primary-color;
+		}
+
+		#cs-raised {
+			// @include font-text();
+		}
+
+		#cs-price {
+			@include font-text();
+			font-weight: 400;
+		}
+
+	}
+
+}

@@ -1,0 +1,257 @@
+header {
+	@include pos($h: auto);
+	top: 50px;
+	left: 0;
+	right: 0;
+	z-index: 100;
+
+	.row {
+		@include flex();
+	}
+
+	.cs-logo {
+
+		&-mobile {
+			display: none;
+		}
+
+		img {
+			max-width: 300px;
+			width: 100%;
+			height: auto;
+		}
+
+	}
+
+	ul {
+		text-align: center;
+
+		li {
+			display: inline-block;
+			padding: 0 20px;
+			position: relative;
+
+			a {
+				@include font(15px, 1.4);
+				@include font-menu();
+				font-weight: 200;
+				text-transform: uppercase;
+				color: $primary-color;
+
+				&:hover, &:active, &:focus {
+					color: $light-primary-color;
+				}
+			}
+
+			&.cs-dropdown {
+				position: relative;
+
+				& .cs-dropdown-wrapper {
+					@include pos(absolute, auto, auto);
+					min-width: 180px;
+					top: 100%;
+					left: 50%;
+					margin-left: -90px;
+					border-radius: 10px;
+					padding-top: 30px;
+					display: none;
+				}
+
+				& ul {
+
+					li {
+						padding: 0;
+						width: 100%;
+						background-color: $primary-color;
+						transition: all 0.3s ease;
+
+						&:hover {
+							background-color: $second-color;
+
+							a {
+								color: $primary-color;
+							}
+						}
+
+						a {
+							@include font(13px, 1.6);
+							font-weight: 400;
+							display: block;
+							padding: 14px 15px;
+							transition: all 0.3s ease;
+							color: $second-color;
+						}
+
+						&:first-child {
+							border-top-right-radius: 10px;
+							border-top-left-radius: 10px;
+						}
+
+						&:last-child {
+							border-bottom-right-radius: 10px;
+							border-bottom-left-radius: 10px;
+						}
+					}
+				}
+
+				&:hover {
+
+					& > .cs-dropdown-wrapper {
+						display: block;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+.cs-header-mobile {
+	@include pos(fixed, 100%, 100%);
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 101;
+	display: none;
+
+	&-wrap {
+		height: 100%;
+		width: 100%;
+		overflow: scroll;
+		position: relative;
+
+		> ul {
+			@include pos(absolute, auto, auto);
+			top: 50%;
+			margin-top: -100px !important;
+			left: 50%;
+			margin-left: -150px !important;
+		}
+	}
+
+	.cs-dropdown {
+		
+		> a {
+			position: relative;
+
+			&:after {
+				@include pos(absolute, 10px, 1px);
+				background-color: white;
+				top: 50%;
+				margin-top: 1px;
+				right: -25px;
+				content: '';
+			}
+
+			&:before {
+				@include pos(absolute, 10px, 1px);
+				@include transform(rotate(90deg));
+				background-color: white;
+				top: 50%;
+				margin-top: 1px;
+				right: -25px;
+				content: '';
+			}
+		}
+
+		&.active {
+			ul {
+				display: block;
+			}
+
+			> a:before {
+				display: none;
+			}
+		}
+
+		ul {
+			display: none;
+		}
+	}
+
+	ul {
+		list-style: none;
+		text-align: center;
+		margin: 0;
+		padding: 0;
+		max-width: 300px;
+		width: 100%;
+
+		li {
+			color: white;
+
+			a {
+				color: inherit;
+				text-decoration: none;
+				padding: 10px 0;
+				display: inline-block;
+				transition: all 0.3s ease;
+
+				&.active, &:hover, &:focus {
+					color: $primary-color;
+				}
+			}
+
+		}
+	}
+}
+
+.cs-mob-trigger {
+	@include pos(fixed, 50px, 50px);
+	top: 8px;
+	right: 20px;
+	z-index: 999;
+	display: none;
+	cursor: pointer;
+
+	&:before {
+		@include pos(absolute, 34px, 34px);
+		top: 50%;
+		margin-top: -17px;
+		left: 50%;
+		margin-left: -17px;
+		content: '';
+	}
+
+	i {
+		@include pos(absolute, 50%, 2px);
+		background-color: $second-color;
+		top: 25px;
+		left: 25%;
+		transition: all 0.3s ease;
+		content: '';
+
+		&:first-child {
+			top: 18px;
+		}
+
+		&:last-child {
+			top: 32px;
+		}
+	}
+
+	&.ready {
+
+		i:first-child, i:last-child {
+			@include transform(rotate(45deg));
+			top: 50%;
+			margin-top: -1px;
+		}
+
+		i:nth-child(2) {
+			display: none;
+		}
+
+		i:last-child {
+			@include transform(rotate(-45deg));
+		}
+
+	}
+
+}

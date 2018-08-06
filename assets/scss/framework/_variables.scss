@@ -1,0 +1,32 @@
+//*
+//* COLORS
+//*
+
+$light: 10%;
+$dark: 10%;
+
+$primary-color: #ef3f42;
+$second-color: #ffffff;
+
+$title-color: #ef3f42;
+$text-color: #3F3F3F;
+
+$error-color: #f7454c;
+$error-message-color: #e34747;
+$success-color: #87bf48;
+
+$light-primary-color: lighten($primary-color, $light);
+$light-second-color: lighten($second-color, $light);
+
+$dark-primary-color: darken($primary-color, $dark);
+$dark-second-color: darken($second-color, $dark);
+
+$comp-primary-color: complement($primary-color);
+$comp-second-color: complement($second-color);
+
+
+//*
+//* DEFAULT VARIABLES
+//*
+
+$round: 4px;

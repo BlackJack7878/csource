@@ -1,0 +1,325 @@
+body {
+	background-color: rgb(246, 246, 246);
+	color: $text-color;
+	overflow-x: hidden;
+}
+
+.row {
+	margin: auto;
+	max-width: 1140px;
+}
+
+input {
+	@include font(15px, 1.8);
+	border-radius: 30px;
+	border-width: 0;
+	outline: none;
+	padding: 10px 25px;
+	height: 47px !important;
+	position: relative;
+	transition: all 0.3s ease;
+	top: 0;
+	right: 0;
+
+	&:focus {
+		top: -4px;
+		right: -3px;
+		-webkit-box-shadow: -10px 10px 59px -16px rgba(0,0,0,0.75);
+		-moz-box-shadow: -10px 10px 59px -16px rgba(0,0,0,0.75);
+		box-shadow: -10px 10px 59px -16px rgba(0,0,0,0.75);
+	}
+}
+
+.anim-left,
+.anim-left-slow,
+.anim-right,
+.anim-right-slow,
+.anim-rotate,
+.anim-spin,
+.anim-spin-right,
+.anim-drop,
+.anim-apear,
+.anim-under,
+.anim-under-slow,
+.anim-under-slowest {
+	opacity: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	@include font-header();
+	padding-bottom: 25px;
+	color: $title-color;
+	letter-spacing: 0.5px;
+}
+
+h3, h4, h5, h6 {
+	padding-bottom: 15px;
+}
+
+h1 {
+	@include font(40px, 1.4);
+}
+
+h2 {
+	@include font(30px, 1.4);
+}
+
+h3 {
+	@include font(24px, 1.4);
+}
+
+h4 {
+	@include font(18px, 1.4);
+}
+
+h5 {
+	@include font(15px, 1.4);
+}
+
+h6 {
+	@include font(12px, 1.4);
+}
+
+a {
+	@include font(14px, 1.6);
+	letter-spacing: 0.3px;
+}
+
+p {
+	@include font(14px, 1.6);
+	color: $text-color;
+	padding-bottom: 25px;
+	letter-spacing: 0.3px;
+}
+
+span {
+	font-size: inherit;
+	font-family: inherit;
+	line-height: inherit;
+}
+
+// main classes
+
+.cs-btn {
+	@include font(15px, 1.8);
+	@include font-header();
+	display: inline-block;
+	background-color: $primary-color;
+	color: #fff;
+	transition: all 0.3s ease;
+	border-radius: 30px;
+	padding: 10px 35px;
+	outline: none;
+	border-width: 0;
+
+	&.cs-btn-anim {
+		&:hover, &:active, &:focus {
+			background-color: $primary-color;
+		}
+	}
+
+	&:hover, &:active, &:focus {
+		background-color: $light-primary-color;
+		color: white;
+	}
+
+	&-inversed {
+		background-color: $second-color;
+		color: $primary-color;
+
+		&.cs-btn-anim {
+			&:hover, &:active, &:focus {
+				background-color: $second-color;
+			}
+
+			span {
+				color: $primary-color;
+			}
+		}
+
+		&:hover, &:active, &:focus {
+			background-color: $dark-second-color;
+			color: $primary-color;
+		}
+	}
+}
+
+.cs-btn-anim {
+	overflow: hidden;
+	position: relative;
+
+	span {
+		z-index: 20;
+	}
+
+	&.cs-btn-inversed:after {
+		background: $primary-color;
+	}
+
+	&:after {
+		background: #fff;
+		content: "";
+		height: 155px;
+		left: -75px;
+		opacity: .2;
+		position: absolute;
+		top: -50px;
+		transform: rotate(35deg);
+		transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+		width: 50px;
+		z-index: 1;
+	}
+
+	&:hover {
+
+		&:after {
+			left: 120%;
+			transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+		}
+	}
+}
+
+.cs-hover-underline,
+.cs-hover-underline-inversed {
+	position: relative;
+
+	&:before {
+		@include pos(absolute, 0, 2px);
+		bottom: -10px;
+		left: -5%;
+		right: 105%;
+		transition: all 0.3s ease;
+		background-color: $primary-color;
+		content: '';
+	}
+
+	&:hover:before {
+		width: 110%;
+		right: -5%;
+	}
+
+}
+
+.cs-hover-underline-inversed:before {
+	background-color: $second-color;
+}
+
+.cs-hover-press {
+	padding: 15px;
+}
+
+.cs-center {
+	text-align: center;
+}
+
+.cs-color-main {
+	color: $primary-color;
+}
+
+.cs-block-subheader {
+	@include font(14px, 1.4);
+}
+
+.cs-reversed-block-white,
+.cs-reversed-block-primary {
+	display: inline-block;
+	background-color: $second-color;
+	color: $primary-color;
+	padding: 0 7px;
+}
+
+.cs-reversed-block-primary {
+	background-color: $primary-color;
+	color: $second-color;
+}
+
+.cs-underlined,
+.cs-underlined-primary {
+	position: relative;
+	display: inline-block;
+	margin: auto;
+
+	&:after {
+		@include pos($w: 40%, $h: 2px);
+		background-color: #fff;
+		left: 30%;
+		right: 30%;
+		bottom: 15px;
+		border-radius: 10px;
+		content: '';
+	}
+}
+
+.cs-underlined-primary::after {
+	background-color: $primary-color;
+}
+
+.cs-color-inversed {
+
+	h1, h2, h3, h4, h5, h6, p, li {
+		color: #fff;
+	}
+}
+
+// background tringles
+
+.cs-tringle-block {
+	height: 200px;
+	position: relative;
+	z-index: 4;
+
+	&.cs-tringle-bottom-right:before {
+		bottom: 200px;
+	}
+
+	&.cs-tringle-top-right:before {
+		bottom: -200px;
+	}
+
+	&.cs-tringle-top-left:before {
+		bottom: 0;
+	}
+
+	&.cs-tringle-bottom-left:before {
+		left: -50px;
+		transform: rotate(-7deg) skewX(0deg);
+	}
+}
+
+.cs-tringle-bottom-left,
+.cs-tringle-bottom-right,
+.cs-tringle-top-right,
+.cs-tringle-top-left {
+	position: relative;
+	overflow: hidden;
+
+	&:before {
+		content: "";
+		position: absolute;
+		bottom: 0px; 
+		left: 0;
+		padding-bottom: 200px;
+		width: 200%;
+		z-index: 5;
+		transform-origin: 0 0;
+		transform: rotate(7deg) skewX(0deg);
+	}
+}
+
+.cs-tringle-top-right {
+	&:before {
+		transform: rotate(-7deg) skewX(0deg);
+	}
+}
+
+.cs-tringle-color-main {
+	&:before, &:after {
+		background-color: $primary-color;
+	}
+}
+
+.cs-tringle-color-bg {
+	&:before, &:after {
+		background-color: rgb(246, 246, 246);
+	}
+}

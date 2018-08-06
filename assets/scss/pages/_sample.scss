@@ -1,0 +1,144 @@
+.cs-sample {
+
+	.cs-home-intro:before {
+		background-color: rgb(246, 246, 246);
+	}
+
+	&-block .row:last-child {
+		padding-top: 50px;
+	}
+
+	&-sidebar {
+
+		&-email {
+			background-color: $primary-color;
+			border-radius: 15px;
+			padding: 40px 20px 50px 20px;
+			margin-bottom: 40px;
+
+			h4 {
+				padding-bottom: 30px;
+			}
+
+			form {
+
+				input {
+					max-width: 250px;
+					width: 100%;
+					margin-bottom: 20px;
+				}
+
+				button {
+					max-width: 250px;
+					width: 100%;
+				}
+			}
+		}
+
+		&-chance {
+			@include bg('home-chance-bg-2.jpg', center, center);
+			background-size: cover;
+			padding: 50px 20px 50px 20px;
+			border-radius: 15px;
+			position: relative;
+			margin-bottom: 40px;
+
+			h6 {
+				font-weight: 300;
+				color: white;
+				padding-bottom: 25px;
+			}
+
+			h4 {
+				padding-bottom: 30px;
+			}
+
+			h6, h4, a {
+				position: relative;
+				z-index: 3;
+			}
+
+			&:before {
+				@include pos();
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: rgba(0, 0, 0, 0.7);
+				border-radius: 15px;
+				z-index: 2;
+				content: '';
+			}
+		}
+
+		&-posts {
+			border-radius: 15px;
+			overflow: hidden;
+			margin-bottom: 40px;
+
+			article {
+				position: relative;
+				overflow: hidden;
+				text-align: center;
+				cursor: pointer;
+
+				h6 {
+					@include font-text();
+					font-weight: 700;
+					color: white;
+					padding: 30px 20px;
+					transition: all 0.3s ease;
+					position: relative;
+					z-index: 3;
+				}
+
+				img {
+					@include pos();
+					@include transform(translateY(-50%));
+					-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    				filter: grayscale(100%);
+    				transition: all 0.3s ease;
+					top: 50%;
+					left: 0;
+					right: 0;
+					height: auto;
+					z-index: 1;
+				}
+
+				&:before {
+					@include pos();
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					background-color: rgba(0, 0, 0, 0.4);
+					border-radius: 15px;
+					z-index: 2;
+					transition: all 0.3s ease;
+					content: '';
+				}
+
+				&:hover, &:focus, &:active {
+
+					h6 {
+						padding: 40px 20px;
+					}
+
+					img {
+						-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    					filter: grayscale(0%);
+					}
+
+					&:before {
+						background-color: rgba(0, 0, 0, 0.2);
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}

@@ -1,0 +1,28 @@
+//*
+//* Sass Framework
+//*
+@import "assets/scss/framework/_variables.scss";
+@import "assets/scss/framework/_mixins.scss";
+@import "assets/scss/framework/_reset.scss";
+
+
+//*
+//* CSS
+//*
+@import "assets/scss/_general.scss";
+@import "assets/scss/_animations.scss";
+@import "assets/scss/_header.scss";
+@import "assets/scss/_footer.scss";
+
+@import "assets/scss/pages/homepage.scss";
+@import "assets/scss/pages/homepage-2.scss";
+@import "assets/scss/pages/about.scss";
+@import "assets/scss/pages/airdrop.scss";
+@import "assets/scss/pages/blog.scss";
+@import "assets/scss/pages/sample.scss";
+
+//*
+//* MOBILE
+//*
+
+@import "assets/scss/_mobile.scss";
